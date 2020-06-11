@@ -3,7 +3,7 @@ def string_alternative(inputString):
 
 def main():
     inputString=input("Enter the Input String:")
-    string_alternative("".join(inputString.split()))
+    string_alternative(inputString)
 
 if __name__=="__main__":
     main()
