@@ -16,6 +16,10 @@ corr = n_features.corr()
 print('The top 3 correlated features \n')
 print(corr['quality'].sort_values(ascending=False)[:3], '\n')
 
+# negative correlated features
+print('The top 3 negative correlated features \n')
+print(corr['quality'].sort_values(ascending=False)[-3:], '\n')
+
 # Null values
 nulls = pd.DataFrame(train.isnull().sum().sort_values(ascending=False))
 nulls.columns = ['Null Count']
