@@ -89,6 +89,12 @@ print("score after scaling",scorenew)
 pca = PCA(2)
 x_pca = pca.fit_transform(x)
 
+#scaled data is x_scaler
+#applying pca on x-scaler
+
+pca = PCA(2)
+x_pca_scaler = pca.fit_transform(x_scaler)
+
 
 
 #BONUS QUESTION-1
@@ -106,12 +112,6 @@ pcameansscore = metrics.silhouette_score(x_pca, y_cluster_kmeanspca)
 print("score after pca+kmeans",pcameansscore)
 
 #2 SCALING+PCA+KMEANS
-
-#scaled data is x_scaler
-#applying pca on x-scaler
-
-pca = PCA(2)
-x_pca_scaler = pca.fit_transform(x_scaler)
 
 ##building the model 
 km = KMeans(n_clusters=3)
