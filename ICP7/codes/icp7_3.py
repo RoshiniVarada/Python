@@ -22,26 +22,26 @@ text = open('input.txt', encoding="utf8").read()
 
 word_tokens =word_tokenize(text)
 sent_tokens = sent_tokenize(text)
-#print("Word tokens:",word_tokens)
-#print("\nSentence tokens:",sent_tokens)
+print("Word tokens:",word_tokens)
+print("\nSentence tokens:",sent_tokens)
 
 trigrams = ngrams(word_tokens,3)
-#print("\nTrigrams: ",list(trigrams))
+print("\nTrigrams: ",list(trigrams))
 
 lemmatized_output = ' '.join([lemmatizer.lemmatize(w) for w in word_tokens])
-#print("\nLemmatization:\n",lemmatized_output)
+print("\nLemmatization:\n",lemmatized_output)
 
 stemmed_output = ' '.join([ps.stem(w) for w in word_tokens])
-#print("\nStemming:\n",stemmed_output)
+print("\nStemming:\n",stemmed_output)
 
 n_pos = nltk.pos_tag(word_tokens)
-#print("\nParts of Speech :", n_pos)
+print("\nParts of Speech :", n_pos)
 
 noe = ne_chunk(n_pos)
 print("\nNamed Entity Recognition :", noe)
 
 lsstemmed_output = ' '.join([ls.stem(w) for w in word_tokens])
-#print("\nLSStemming:\n",lsstemmed_output)
+print("\nLSStemming:\n",lsstemmed_output)
 
 wsstemmed_output = ' '.join([ws.stem(w) for w in word_tokens])
-#print("\nSBStemming:\n",wsstemmed_output)
+print("\nSBStemming:\n",wsstemmed_output)
